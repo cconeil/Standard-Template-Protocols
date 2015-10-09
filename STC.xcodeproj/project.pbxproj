@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		9D1FC2731BC78B8A00238B57 /* STC.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D1FC2721BC78B8A00238B57 /* STC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D1FC27D1BC78C0C00238B57 /* Moveable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FC27A1BC78C0C00238B57 /* Moveable.swift */; settings = {ASSET_TAGS = (); }; };
+		9D1FC27E1BC78C0C00238B57 /* Pinchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FC27B1BC78C0C00238B57 /* Pinchable.swift */; settings = {ASSET_TAGS = (); }; };
+		9D1FC27F1BC78C0C00238B57 /* Rotatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FC27C1BC78C0C00238B57 /* Rotatable.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9D1FC26F1BC78B8A00238B57 /* STC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = STC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D1FC2721BC78B8A00238B57 /* STC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STC.h; sourceTree = "<group>"; };
 		9D1FC2741BC78B8A00238B57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D1FC27A1BC78C0C00238B57 /* Moveable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Moveable.swift; sourceTree = "<group>"; };
+		9D1FC27B1BC78C0C00238B57 /* Pinchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pinchable.swift; sourceTree = "<group>"; };
+		9D1FC27C1BC78C0C00238B57 /* Rotatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rotatable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +54,9 @@
 			children = (
 				9D1FC2721BC78B8A00238B57 /* STC.h */,
 				9D1FC2741BC78B8A00238B57 /* Info.plist */,
+				9D1FC27A1BC78C0C00238B57 /* Moveable.swift */,
+				9D1FC27B1BC78C0C00238B57 /* Pinchable.swift */,
+				9D1FC27C1BC78C0C00238B57 /* Rotatable.swift */,
 			);
 			path = STC;
 			sourceTree = "<group>";
@@ -130,6 +139,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D1FC27E1BC78C0C00238B57 /* Pinchable.swift in Sources */,
+				9D1FC27F1BC78C0C00238B57 /* Rotatable.swift in Sources */,
+				9D1FC27D1BC78C0C00238B57 /* Moveable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +288,7 @@
 				9D1FC2791BC78B8A00238B57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
