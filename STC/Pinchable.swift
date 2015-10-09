@@ -8,17 +8,15 @@
 
 import UIKit
 
-protocol Pinchable {
+public protocol Pinchable {
     func makePinchable()
     func didStartPinching()
     func didFinishPinching()
-    func maximumPinchScale() -> CGFloat
-    func minimumPinchScale() -> CGFloat
     func transformWithScale(scale:CGFloat, lastScale:CGFloat) -> CGAffineTransform
     func animateToPinchedTransform(transform:CGAffineTransform)
 }
 
-class PinchState {
+public class PinchState {
     var lastScale:CGFloat = 1.0
     var pinchHandler:((pinch:UIPinchGestureRecognizer) -> Void)?
 
@@ -29,27 +27,15 @@ class PinchState {
     }
 }
 
-extension Pinchable where Self:UIView {
+public extension Pinchable where Self:UIView {
 
     func makePinchable() {
         let pinchState = PinchState()
         let pinch = UIPinchGestureRecognizer(target: pinchState, action: "didPinch:")
         self.addGestureRecognizer(pinch)
 
-        func getScale() -> CGFloat {
-            let scale = pinch.scale
-            let currentScale = self.transform.a
-            if scale + currentScale < self.minimumPinchScale() {
-                return self.minimumPinchScale()
-            } else if scale + currentScale > maximumPinchScale() {
-                return self.maximumPinchScale()
-            } else {
-                return scale
-            }
-        }
-
         pinchState.pinchHandler = {
-            [unowned pinchState, unowned self] (pinch:UIPinchGestureRecognizer) in
+            /* [unowned pinchState, unowned self] */ (pinch:UIPinchGestureRecognizer) in
 
             switch pinch.state {
             case .Began:
@@ -58,7 +44,7 @@ extension Pinchable where Self:UIView {
                 pinchState.lastScale = 1.0
                 self.didFinishPinching()
             case .Changed:
-                let scale = getScale()
+                let scale = pinch.scale
                 let transform = self.transformWithScale(scale, lastScale: pinchState.lastScale)
                 pinchState.lastScale = scale
                 self.animateToPinchedTransform(transform)
@@ -77,7 +63,7 @@ extension Pinchable where Self:UIView {
     }
 
     func maximumPinchScale() -> CGFloat {
-        return 10.0
+        return 2.0
     }
 
     func minimumPinchScale() -> CGFloat {

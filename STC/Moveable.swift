@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol Moveable {
+public protocol Moveable {
     func makeMoveable()
     func didStartMoving()
     func didFinishMoving()
@@ -16,7 +16,7 @@ protocol Moveable {
     func animateToPoint(point:CGPoint)
 }
 
-class MoveState {
+public class MoveState {
     var startPoint:CGPoint = CGPointZero
     var currentPoint:CGPoint = CGPointZero
     var panHandler:((pan:UIPanGestureRecognizer) -> Void)?
@@ -28,7 +28,7 @@ class MoveState {
     }
 }
 
-extension Moveable where Self:UIView {
+public extension Moveable where Self:UIView {
 
     func makeMoveable() {
         let moveState = MoveState()

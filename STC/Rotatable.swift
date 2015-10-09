@@ -8,18 +8,16 @@
 
 import UIKit
 
-protocol Rotatable {
+public protocol Rotatable {
     func makeRotatable()
     func didStartRotating()
     func didFinishRotating()
-    func minimumRotation() -> CGFloat
-    func maximumRotation() -> CGFloat
 
     func transformWithRotation(rotation:CGFloat, lastRotation:CGFloat) -> CGAffineTransform
     func animateToRotatedTransform(transform:CGAffineTransform)
 }
 
-class RotatationState {
+public class RotatationState {
     var lastRotation:CGFloat = 0.0
     var rotationHandler:((rotation:UIRotationGestureRecognizer) -> Void)?
 
@@ -30,7 +28,7 @@ class RotatationState {
     }
 }
 
-extension Rotatable where Self:UIView {
+public extension Rotatable where Self:UIView {
 
     func makeRotatable() {
         let rotationState = RotatationState()
@@ -38,20 +36,11 @@ extension Rotatable where Self:UIView {
         self.addGestureRecognizer(rotation)
 
         func getRotation() -> CGFloat {
-            let angle = rotation.rotation
-            let currentAngle = atan2(self.transform.b, self.transform.a)
-
-            if (angle + currentAngle > maximumRotation()) {
-                return self.maximumRotation()
-            } else if (angle + currentAngle < maximumRotation()) {
-                return self.minimumRotation()
-            } else {
-                return angle
-            }
+            return rotation.rotation
         }
 
         rotationState.rotationHandler = {
-            [unowned rotationState, unowned self] (rotation:UIRotationGestureRecognizer) in
+            /*[unowned rotationState, unowned self]*/ (rotation:UIRotationGestureRecognizer) in
 
             switch rotation.state {
             case .Began:
@@ -62,7 +51,7 @@ extension Rotatable where Self:UIView {
             case .Changed:
                 let transform = self.transformWithRotation(getRotation(), lastRotation: rotationState.lastRotation)
                 self.animateToRotatedTransform(transform)
-                rotationState.lastRotation = rotation.rotation
+                rotationState.lastRotation = getRotation()
             default:
                 break
             }
