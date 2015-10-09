@@ -34,15 +34,19 @@ public extension Pinchable where Self:UIView {
         let pinch = UIPinchGestureRecognizer(target: pinchState, action: "didPinch:")
         self.addGestureRecognizer(pinch)
 
+        func resetScale() {
+            pinchState.lastScale = 1.0
+        }
+
         pinchState.pinchHandler = {
-            /* [unowned pinchState, unowned self] */ (pinch:UIPinchGestureRecognizer) in
+            [unowned self, unowned pinchState] (pinch:UIPinchGestureRecognizer) in
 
             switch pinch.state {
             case .Began:
                 self.didStartPinching()
             case .Ended:
-                pinchState.lastScale = 1.0
                 self.didFinishPinching()
+                resetScale()
             case .Changed:
                 let scale = pinch.scale
                 let transform = self.transformWithScale(scale, lastScale: pinchState.lastScale)

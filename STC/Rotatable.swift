@@ -35,23 +35,23 @@ public extension Rotatable where Self:UIView {
         let rotation = UIRotationGestureRecognizer(target: rotationState, action: "didRotate:")
         self.addGestureRecognizer(rotation)
 
-        func getRotation() -> CGFloat {
-            return rotation.rotation
+        func resetLastRotation() {
+            rotationState.lastRotation = 0.0
         }
 
         rotationState.rotationHandler = {
-            /*[unowned rotationState, unowned self]*/ (rotation:UIRotationGestureRecognizer) in
+            [unowned self, unowned rotationState] (rotation:UIRotationGestureRecognizer) in
 
             switch rotation.state {
             case .Began:
                 self.didStartRotating()
-                rotationState.lastRotation = 0.0
+                resetLastRotation()
             case .Ended:
                 self.didFinishRotating()
             case .Changed:
-                let transform = self.transformWithRotation(getRotation(), lastRotation: rotationState.lastRotation)
+                let transform = self.transformWithRotation(rotation.rotation, lastRotation: rotationState.lastRotation)
                 self.animateToRotatedTransform(transform)
-                rotationState.lastRotation = getRotation()
+                rotationState.lastRotation = rotation.rotation
             default:
                 break
             }
