@@ -21,8 +21,7 @@ public extension Pinchable where Self:UIView {
     func makePinchable() {
 
         var lastScale:CGFloat = 1.0
-        // [unowned self, unowned pinchState]
-        let gestureRecognizer = UIPinchGestureRecognizer { (recognizer) -> Void in
+        let gestureRecognizer = UIPinchGestureRecognizer { [unowned self] (recognizer) -> Void in
             let pinch = recognizer as! UIPinchGestureRecognizer
             switch pinch.state {
             case .Began:
