@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9D1FC26E1BC78B8A00238B57"
-               BuildableName = "STC.framework"
-               BlueprintName = "STC"
-               ReferencedContainer = "container:STC.xcodeproj">
+               BuildableName = "STP.framework"
+               BlueprintName = "STP"
+               ReferencedContainer = "container:STP.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,9 +46,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9D1FC26E1BC78B8A00238B57"
-            BuildableName = "STC.framework"
-            BlueprintName = "STC"
-            ReferencedContainer = "container:STC.xcodeproj">
+            BuildableName = "STP.framework"
+            BlueprintName = "STP"
+            ReferencedContainer = "container:STP.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -64,9 +64,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9D1FC26E1BC78B8A00238B57"
-            BuildableName = "STC.framework"
-            BlueprintName = "STC"
-            ReferencedContainer = "container:STC.xcodeproj">
+            BuildableName = "STP.framework"
+            BlueprintName = "STP"
+            ReferencedContainer = "container:STP.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

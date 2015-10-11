@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9D1FC2731BC78B8A00238B57 /* STC.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D1FC2721BC78B8A00238B57 /* STC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D1FC2731BC78B8A00238B57 /* STP.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D1FC2721BC78B8A00238B57 /* STP.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D1FC27D1BC78C0C00238B57 /* Moveable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FC27A1BC78C0C00238B57 /* Moveable.swift */; settings = {ASSET_TAGS = (); }; };
 		9D1FC27E1BC78C0C00238B57 /* Pinchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FC27B1BC78C0C00238B57 /* Pinchable.swift */; settings = {ASSET_TAGS = (); }; };
 		9D1FC27F1BC78C0C00238B57 /* Rotatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FC27C1BC78C0C00238B57 /* Rotatable.swift */; settings = {ASSET_TAGS = (); }; };
@@ -16,8 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9D1FC26F1BC78B8A00238B57 /* STC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = STC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D1FC2721BC78B8A00238B57 /* STC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STC.h; sourceTree = "<group>"; };
+		9D1FC26F1BC78B8A00238B57 /* STP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = STP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D1FC2721BC78B8A00238B57 /* STP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STP.h; sourceTree = "<group>"; };
 		9D1FC2741BC78B8A00238B57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D1FC27A1BC78C0C00238B57 /* Moveable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Moveable.swift; sourceTree = "<group>"; };
 		9D1FC27B1BC78C0C00238B57 /* Pinchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pinchable.swift; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 		9D1FC2651BC78B8A00238B57 = {
 			isa = PBXGroup;
 			children = (
-				9D1FC2711BC78B8A00238B57 /* STC */,
+				9D1FC2711BC78B8A00238B57 /* STP */,
 				9D1FC2701BC78B8A00238B57 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,22 +48,23 @@
 		9D1FC2701BC78B8A00238B57 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9D1FC26F1BC78B8A00238B57 /* STC.framework */,
+				9D1FC26F1BC78B8A00238B57 /* STP.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9D1FC2711BC78B8A00238B57 /* STC */ = {
+		9D1FC2711BC78B8A00238B57 /* STP */ = {
 			isa = PBXGroup;
 			children = (
-				9D1FC2721BC78B8A00238B57 /* STC.h */,
+				9D1FC2721BC78B8A00238B57 /* STP.h */,
 				9D1FC2741BC78B8A00238B57 /* Info.plist */,
-				9D1FC2801BC791D200238B57 /* UIGesture Protocols */,
+				9D1FC2801BC791D200238B57 /* UIGestureRecognizer Protocols */,
 			);
+			name = STP;
 			path = STC;
 			sourceTree = "<group>";
 		};
-		9D1FC2801BC791D200238B57 /* UIGesture Protocols */ = {
+		9D1FC2801BC791D200238B57 /* UIGestureRecognizer Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				9D1FC27A1BC78C0C00238B57 /* Moveable.swift */,
@@ -72,7 +73,7 @@
 				9D1FC28F1BCAD25600238B57 /* BlockGestureRecognizer.swift */,
 				9D1FC2911BCAD2DB00238B57 /* Associator.swift */,
 			);
-			name = "UIGesture Protocols";
+			name = "UIGestureRecognizer Protocols";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,16 +83,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D1FC2731BC78B8A00238B57 /* STC.h in Headers */,
+				9D1FC2731BC78B8A00238B57 /* STP.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		9D1FC26E1BC78B8A00238B57 /* STC */ = {
+		9D1FC26E1BC78B8A00238B57 /* STP */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9D1FC2771BC78B8A00238B57 /* Build configuration list for PBXNativeTarget "STC" */;
+			buildConfigurationList = 9D1FC2771BC78B8A00238B57 /* Build configuration list for PBXNativeTarget "STP" */;
 			buildPhases = (
 				9D1FC26A1BC78B8A00238B57 /* Sources */,
 				9D1FC26B1BC78B8A00238B57 /* Frameworks */,
@@ -102,9 +103,9 @@
 			);
 			dependencies = (
 			);
-			name = STC;
+			name = STP;
 			productName = STC;
-			productReference = 9D1FC26F1BC78B8A00238B57 /* STC.framework */;
+			productReference = 9D1FC26F1BC78B8A00238B57 /* STP.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -121,7 +122,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9D1FC2691BC78B8A00238B57 /* Build configuration list for PBXProject "STC" */;
+			buildConfigurationList = 9D1FC2691BC78B8A00238B57 /* Build configuration list for PBXProject "STP" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -133,7 +134,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9D1FC26E1BC78B8A00238B57 /* STC */,
+				9D1FC26E1BC78B8A00238B57 /* STP */,
 			);
 		};
 /* End PBXProject section */
@@ -265,7 +266,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = because.STC;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = STP;
 				SDKROOT = iphoneos9.0;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -284,7 +285,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = because.STC;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = STP;
 				SDKROOT = iphoneos9.0;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -294,7 +295,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9D1FC2691BC78B8A00238B57 /* Build configuration list for PBXProject "STC" */ = {
+		9D1FC2691BC78B8A00238B57 /* Build configuration list for PBXProject "STP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9D1FC2751BC78B8A00238B57 /* Debug */,
@@ -303,7 +304,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9D1FC2771BC78B8A00238B57 /* Build configuration list for PBXNativeTarget "STC" */ = {
+		9D1FC2771BC78B8A00238B57 /* Build configuration list for PBXNativeTarget "STP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9D1FC2781BC78B8A00238B57 /* Debug */,

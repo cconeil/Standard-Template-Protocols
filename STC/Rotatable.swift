@@ -36,7 +36,6 @@ public extension Rotatable where Self:UIView {
             default:
                 break
             }
-
         }
         self.addGestureRecognizer(gestureRecognizer)
     }
