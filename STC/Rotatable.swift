@@ -17,45 +17,28 @@ public protocol Rotatable {
     func animateToRotatedTransform(transform:CGAffineTransform)
 }
 
-public class RotatationState {
-    var lastRotation:CGFloat = 0.0
-    var rotationHandler:((rotation:UIRotationGestureRecognizer) -> Void)?
-
-    @objc func didRotate(rotation:UIRotationGestureRecognizer) {
-        if let block = self.rotationHandler {
-            block(rotation: rotation)
-        }
-    }
-}
-
 public extension Rotatable where Self:UIView {
 
     func makeRotatable() {
-        let rotationState = RotatationState()
-        let rotation = UIRotationGestureRecognizer(target: rotationState, action: "didRotate:")
-        self.addGestureRecognizer(rotation)
-
-        func resetLastRotation() {
-            rotationState.lastRotation = 0.0
-        }
-
-        rotationState.rotationHandler = {
-            [unowned self, unowned rotationState] (rotation:UIRotationGestureRecognizer) in
-
+        var lastRotation:CGFloat = 0.0
+        let gestureRecognizer = UIRotationGestureRecognizer { (recognizer) -> Void in
+            let rotation = recognizer as! UIRotationGestureRecognizer
             switch rotation.state {
             case .Began:
                 self.didStartRotating()
-                resetLastRotation()
+                lastRotation = 0.0
             case .Ended:
                 self.didFinishRotating()
             case .Changed:
-                let transform = self.transformWithRotation(rotation.rotation, lastRotation: rotationState.lastRotation)
+                let transform = self.transformWithRotation(rotation.rotation, lastRotation: lastRotation)
                 self.animateToRotatedTransform(transform)
-                rotationState.lastRotation = rotation.rotation
+                lastRotation = rotation.rotation
             default:
                 break
             }
+
         }
+        self.addGestureRecognizer(gestureRecognizer)
     }
 
     func transformWithRotation(rotation:CGFloat, lastRotation:CGFloat) -> CGAffineTransform {
