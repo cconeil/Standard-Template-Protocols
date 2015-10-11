@@ -16,45 +16,29 @@ public protocol Moveable {
     func animateToPoint(point:CGPoint)
 }
 
-public class MoveState {
-    var startPoint:CGPoint = CGPointZero
-    var currentPoint:CGPoint = CGPointZero
-    var panHandler:((pan:UIPanGestureRecognizer) -> Void)?
-
-    @objc func didPan(pan:UIPanGestureRecognizer) {
-        if let block = self.panHandler {
-            block(pan: pan)
-        }
-    }
-}
-
 public extension Moveable where Self:UIView {
 
     func makeMoveable() {
-        let moveState = MoveState()
-        let pan = UIPanGestureRecognizer(target: moveState, action: "didPan:")
-        self.addGestureRecognizer(pan)
 
-        func moveToTranslation(translation:CGPoint) {
-            let point = self.translateToPointFromTranslation(translation, startPoint: moveState.startPoint, currentPoint: moveState.currentPoint)
-            moveState.currentPoint = point
-            self.animateToPoint(point)
-        }
+        var startPoint:CGPoint = CGPointZero
+        var currentPoint:CGPoint = CGPointZero
 
-        moveState.panHandler = {
-            [unowned self, unowned moveState] (pan : UIPanGestureRecognizer) in
-
+        let gestureRecognizer = UIPanGestureRecognizer { (recognizer) -> Void in
+            let pan = recognizer as! UIPanGestureRecognizer
             let translation = pan.translationInView(self.superview)
-            switch pan.state {
+            switch recognizer.state {
             case .Began:
-                moveState.startPoint = pan.view?.center ?? CGPointZero
+                startPoint = pan.view?.center ?? CGPointZero
                 self.didStartMoving()
             case .Ended, .Cancelled, .Failed:
                 self.didFinishMoving()
             default:
-                moveToTranslation(translation)
+                let point = self.translateToPointFromTranslation(translation, startPoint: startPoint, currentPoint: currentPoint)
+                currentPoint = point
+                self.animateToPoint(point)
             }
         }
+        self.addGestureRecognizer(gestureRecognizer)
     }
 
     func animateToPoint(point:CGPoint) {

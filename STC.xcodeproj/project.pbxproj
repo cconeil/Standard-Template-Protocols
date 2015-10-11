@@ -11,6 +11,8 @@
 		9D1FC27D1BC78C0C00238B57 /* Moveable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FC27A1BC78C0C00238B57 /* Moveable.swift */; settings = {ASSET_TAGS = (); }; };
 		9D1FC27E1BC78C0C00238B57 /* Pinchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FC27B1BC78C0C00238B57 /* Pinchable.swift */; settings = {ASSET_TAGS = (); }; };
 		9D1FC27F1BC78C0C00238B57 /* Rotatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FC27C1BC78C0C00238B57 /* Rotatable.swift */; settings = {ASSET_TAGS = (); }; };
+		9D1FC2901BCAD25600238B57 /* BlockGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FC28F1BCAD25600238B57 /* BlockGestureRecognizer.swift */; settings = {ASSET_TAGS = (); }; };
+		9D1FC2921BCAD2DB00238B57 /* Associator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FC2911BCAD2DB00238B57 /* Associator.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		9D1FC27A1BC78C0C00238B57 /* Moveable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Moveable.swift; sourceTree = "<group>"; };
 		9D1FC27B1BC78C0C00238B57 /* Pinchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pinchable.swift; sourceTree = "<group>"; };
 		9D1FC27C1BC78C0C00238B57 /* Rotatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rotatable.swift; sourceTree = "<group>"; };
+		9D1FC28F1BCAD25600238B57 /* BlockGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockGestureRecognizer.swift; sourceTree = "<group>"; };
+		9D1FC2911BCAD2DB00238B57 /* Associator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Associator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 				9D1FC27A1BC78C0C00238B57 /* Moveable.swift */,
 				9D1FC27B1BC78C0C00238B57 /* Pinchable.swift */,
 				9D1FC27C1BC78C0C00238B57 /* Rotatable.swift */,
+				9D1FC28F1BCAD25600238B57 /* BlockGestureRecognizer.swift */,
+				9D1FC2911BCAD2DB00238B57 /* Associator.swift */,
 			);
 			name = "UIGesture Protocols";
 			sourceTree = "<group>";
@@ -147,7 +153,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D1FC2921BCAD2DB00238B57 /* Associator.swift in Sources */,
 				9D1FC27E1BC78C0C00238B57 /* Pinchable.swift in Sources */,
+				9D1FC2901BCAD25600238B57 /* BlockGestureRecognizer.swift in Sources */,
 				9D1FC27F1BC78C0C00238B57 /* Rotatable.swift in Sources */,
 				9D1FC27D1BC78C0C00238B57 /* Moveable.swift in Sources */,
 			);
