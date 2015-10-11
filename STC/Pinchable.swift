@@ -16,46 +16,30 @@ public protocol Pinchable {
     func animateToPinchedTransform(transform:CGAffineTransform)
 }
 
-public class PinchState {
-    var lastScale:CGFloat = 1.0
-    var pinchHandler:((pinch:UIPinchGestureRecognizer) -> Void)?
-
-    @objc func didPinch(pinch:UIPinchGestureRecognizer) {
-        if let block = self.pinchHandler {
-            block(pinch: pinch)
-        }
-    }
-}
-
 public extension Pinchable where Self:UIView {
 
     func makePinchable() {
-        let pinchState = PinchState()
-        let pinch = UIPinchGestureRecognizer(target: pinchState, action: "didPinch:")
-        self.addGestureRecognizer(pinch)
 
-        func resetScale() {
-            pinchState.lastScale = 1.0
-        }
-
-        pinchState.pinchHandler = {
-            [unowned self, unowned pinchState] (pinch:UIPinchGestureRecognizer) in
-
+        var lastScale:CGFloat = 1.0
+        // [unowned self, unowned pinchState]
+        let gestureRecognizer = UIPinchGestureRecognizer { (recognizer) -> Void in
+            let pinch = recognizer as! UIPinchGestureRecognizer
             switch pinch.state {
             case .Began:
                 self.didStartPinching()
             case .Ended:
                 self.didFinishPinching()
-                resetScale()
+                lastScale = 1.0
             case .Changed:
                 let scale = pinch.scale
-                let transform = self.transformWithScale(scale, lastScale: pinchState.lastScale)
-                pinchState.lastScale = scale
+                let transform = self.transformWithScale(scale, lastScale: lastScale)
+                lastScale = scale
                 self.animateToPinchedTransform(transform)
             default:
                 break
             }
         }
+        self.addGestureRecognizer(gestureRecognizer)
     }
 
     func didStartPinching() {
