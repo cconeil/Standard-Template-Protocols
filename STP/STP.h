@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+// Change all to STP
+
 //! Project version number for STC.
 FOUNDATION_EXPORT double STCVersionNumber;
 
