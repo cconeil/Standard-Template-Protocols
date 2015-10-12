@@ -23,7 +23,7 @@ public extension Moveable where Self:UIView {
         var startPoint:CGPoint = CGPointZero
         var currentPoint:CGPoint = CGPointZero
 
-        let gestureRecognizer = UIPanGestureRecognizer { (recognizer) -> Void in
+        let gestureRecognizer = UIPanGestureRecognizer { [unowned self] (recognizer) -> Void in
             let pan = recognizer as! UIPanGestureRecognizer
             let translation = pan.translationInView(self.superview)
             switch recognizer.state {
@@ -46,7 +46,6 @@ public extension Moveable where Self:UIView {
             self.center = point
         }
     }
-
 
     func translateToPointFromTranslation(translation:CGPoint, startPoint:CGPoint, currentPoint:CGPoint) -> CGPoint {
         var point = startPoint

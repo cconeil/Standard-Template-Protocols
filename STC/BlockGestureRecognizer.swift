@@ -10,6 +10,7 @@ extension UIGestureRecognizer {
 
     struct PropertyKeys {
         static var blockKey = "BCBlockPropertyKey"
+        static var multipleGestureRecognizerKey = "BCMultipleGestureRecognizerKey"
     }
 
     private var block:((recognizer:UIGestureRecognizer) -> Void) {

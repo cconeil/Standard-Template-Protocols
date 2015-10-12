@@ -21,7 +21,7 @@ public extension Rotatable where Self:UIView {
 
     func makeRotatable() {
         var lastRotation:CGFloat = 0.0
-        let gestureRecognizer = UIRotationGestureRecognizer { (recognizer) -> Void in
+        let gestureRecognizer = UIRotationGestureRecognizer { [unowned self] (recognizer) -> Void in
             let rotation = recognizer as! UIRotationGestureRecognizer
             switch rotation.state {
             case .Began:
