@@ -7,25 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9D1FC2731BC78B8A00238B57 /* STP.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D1FC2721BC78B8A00238B57 /* STP.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9D1FC27D1BC78C0C00238B57 /* Moveable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FC27A1BC78C0C00238B57 /* Moveable.swift */; settings = {ASSET_TAGS = (); }; };
-		9D1FC27E1BC78C0C00238B57 /* Pinchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FC27B1BC78C0C00238B57 /* Pinchable.swift */; settings = {ASSET_TAGS = (); }; };
-		9D1FC27F1BC78C0C00238B57 /* Rotatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FC27C1BC78C0C00238B57 /* Rotatable.swift */; settings = {ASSET_TAGS = (); }; };
-		9D1FC2901BCAD25600238B57 /* BlockGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FC28F1BCAD25600238B57 /* BlockGestureRecognizer.swift */; settings = {ASSET_TAGS = (); }; };
-		9D1FC2921BCAD2DB00238B57 /* Associator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FC2911BCAD2DB00238B57 /* Associator.swift */; settings = {ASSET_TAGS = (); }; };
-		9D6E288E1BCADCE000452199 /* Tappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E288D1BCADCE000452199 /* Tappable.swift */; settings = {ASSET_TAGS = (); }; };
+		9DE7FA541BCB6C41002E7652 /* BlockGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE7FA4C1BCB6C41002E7652 /* BlockGestureRecognizer.swift */; settings = {ASSET_TAGS = (); }; };
+		9DE7FA551BCB6C41002E7652 /* Moveable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE7FA4D1BCB6C41002E7652 /* Moveable.swift */; settings = {ASSET_TAGS = (); }; };
+		9DE7FA561BCB6C41002E7652 /* Tappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE7FA4E1BCB6C41002E7652 /* Tappable.swift */; settings = {ASSET_TAGS = (); }; };
+		9DE7FA571BCB6C41002E7652 /* Rotatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE7FA4F1BCB6C41002E7652 /* Rotatable.swift */; settings = {ASSET_TAGS = (); }; };
+		9DE7FA581BCB6C41002E7652 /* Pinchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE7FA501BCB6C41002E7652 /* Pinchable.swift */; settings = {ASSET_TAGS = (); }; };
+		9DE7FA591BCB6C41002E7652 /* Associator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE7FA511BCB6C41002E7652 /* Associator.swift */; settings = {ASSET_TAGS = (); }; };
+		9DE7FA5A1BCB6C41002E7652 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DE7FA521BCB6C41002E7652 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
+		9DE7FA5B1BCB6C41002E7652 /* STP.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DE7FA531BCB6C41002E7652 /* STP.h */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9D1FC26F1BC78B8A00238B57 /* STP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = STP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D1FC2721BC78B8A00238B57 /* STP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STP.h; sourceTree = "<group>"; };
-		9D1FC2741BC78B8A00238B57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9D1FC27A1BC78C0C00238B57 /* Moveable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Moveable.swift; sourceTree = "<group>"; };
-		9D1FC27B1BC78C0C00238B57 /* Pinchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pinchable.swift; sourceTree = "<group>"; };
-		9D1FC27C1BC78C0C00238B57 /* Rotatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rotatable.swift; sourceTree = "<group>"; };
-		9D1FC28F1BCAD25600238B57 /* BlockGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockGestureRecognizer.swift; sourceTree = "<group>"; };
-		9D1FC2911BCAD2DB00238B57 /* Associator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Associator.swift; sourceTree = "<group>"; };
-		9D6E288D1BCADCE000452199 /* Tappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tappable.swift; sourceTree = "<group>"; };
+		9DE7FA4C1BCB6C41002E7652 /* BlockGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlockGestureRecognizer.swift; path = STP/BlockGestureRecognizer.swift; sourceTree = SOURCE_ROOT; };
+		9DE7FA4D1BCB6C41002E7652 /* Moveable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Moveable.swift; path = STP/Moveable.swift; sourceTree = SOURCE_ROOT; };
+		9DE7FA4E1BCB6C41002E7652 /* Tappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tappable.swift; path = STP/Tappable.swift; sourceTree = SOURCE_ROOT; };
+		9DE7FA4F1BCB6C41002E7652 /* Rotatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rotatable.swift; path = STP/Rotatable.swift; sourceTree = SOURCE_ROOT; };
+		9DE7FA501BCB6C41002E7652 /* Pinchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pinchable.swift; path = STP/Pinchable.swift; sourceTree = SOURCE_ROOT; };
+		9DE7FA511BCB6C41002E7652 /* Associator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Associator.swift; path = STP/Associator.swift; sourceTree = SOURCE_ROOT; };
+		9DE7FA521BCB6C41002E7652 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = STP/Info.plist; sourceTree = SOURCE_ROOT; };
+		9DE7FA531BCB6C41002E7652 /* STP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STP.h; path = STP/STP.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +59,9 @@
 		9D1FC2711BC78B8A00238B57 /* STP */ = {
 			isa = PBXGroup;
 			children = (
-				9D1FC2721BC78B8A00238B57 /* STP.h */,
-				9D1FC2741BC78B8A00238B57 /* Info.plist */,
 				9D1FC2801BC791D200238B57 /* UIGestureRecognizer Protocols */,
+				9DE7FA521BCB6C41002E7652 /* Info.plist */,
+				9DE7FA531BCB6C41002E7652 /* STP.h */,
 			);
 			name = STP;
 			path = STC;
@@ -69,12 +70,12 @@
 		9D1FC2801BC791D200238B57 /* UIGestureRecognizer Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				9D1FC27A1BC78C0C00238B57 /* Moveable.swift */,
-				9D1FC27B1BC78C0C00238B57 /* Pinchable.swift */,
-				9D1FC27C1BC78C0C00238B57 /* Rotatable.swift */,
-				9D6E288D1BCADCE000452199 /* Tappable.swift */,
-				9D1FC28F1BCAD25600238B57 /* BlockGestureRecognizer.swift */,
-				9D1FC2911BCAD2DB00238B57 /* Associator.swift */,
+				9DE7FA4C1BCB6C41002E7652 /* BlockGestureRecognizer.swift */,
+				9DE7FA4D1BCB6C41002E7652 /* Moveable.swift */,
+				9DE7FA4E1BCB6C41002E7652 /* Tappable.swift */,
+				9DE7FA4F1BCB6C41002E7652 /* Rotatable.swift */,
+				9DE7FA501BCB6C41002E7652 /* Pinchable.swift */,
+				9DE7FA511BCB6C41002E7652 /* Associator.swift */,
 			);
 			name = "UIGestureRecognizer Protocols";
 			sourceTree = "<group>";
@@ -86,7 +87,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D1FC2731BC78B8A00238B57 /* STP.h in Headers */,
+				9DE7FA5B1BCB6C41002E7652 /* STP.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +148,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DE7FA5A1BCB6C41002E7652 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,12 +159,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D1FC2921BCAD2DB00238B57 /* Associator.swift in Sources */,
-				9D1FC27E1BC78C0C00238B57 /* Pinchable.swift in Sources */,
-				9D6E288E1BCADCE000452199 /* Tappable.swift in Sources */,
-				9D1FC2901BCAD25600238B57 /* BlockGestureRecognizer.swift in Sources */,
-				9D1FC27F1BC78C0C00238B57 /* Rotatable.swift in Sources */,
-				9D1FC27D1BC78C0C00238B57 /* Moveable.swift in Sources */,
+				9DE7FA541BCB6C41002E7652 /* BlockGestureRecognizer.swift in Sources */,
+				9DE7FA551BCB6C41002E7652 /* Moveable.swift in Sources */,
+				9DE7FA561BCB6C41002E7652 /* Tappable.swift in Sources */,
+				9DE7FA571BCB6C41002E7652 /* Rotatable.swift in Sources */,
+				9DE7FA581BCB6C41002E7652 /* Pinchable.swift in Sources */,
+				9DE7FA591BCB6C41002E7652 /* Associator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
