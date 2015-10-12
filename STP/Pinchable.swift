@@ -21,6 +21,7 @@ public extension Pinchable where Self:UIView {
     func makePinchable() {
 
         var lastScale:CGFloat = 1.0
+        // Yayyyy unowned. Fucking awesome
         let gestureRecognizer = UIPinchGestureRecognizer { [unowned self] (recognizer) -> Void in
             let pinch = recognizer as! UIPinchGestureRecognizer
             switch pinch.state {
@@ -49,6 +50,8 @@ public extension Pinchable where Self:UIView {
         return
     }
 
+    // make these aprt of the protocol
+    // or a config protocol that pichable conforms to
     func maximumPinchScale() -> CGFloat {
         return 2.0
     }

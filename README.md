@@ -21,7 +21,7 @@ All too often, we find ourselves subclassing views to allow them to be tappable,
 #### Moveable
 By default, making a view conform to the Movable protocol will attach a `UIPanGestureRecognizer` and allow the user to tap on the view and drag it around the screen. Creating a moveable view is as simple as:
 
-```
+```swift    
 class MyMoveableView : UIView, Moveable {
     init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,7 +31,7 @@ class MyMoveableView : UIView, Moveable {
 ``` 
 To do an action on start or finish, or use custom logic for movement (such as bounding the movement into the views superview) or animation, implement the appropriate methods in the `Moveable` protocol.
 
-```
+```swift
 func didStartMoving()
 func didFinishMoving()
 func translateToPointFromTranslation(translation:CGPoint, startPoint:CGPoint, currentPoint:CGPoint) -> CGPoint
@@ -41,7 +41,7 @@ func animateToPoint(point:CGPoint)
 #### Pinchable
 By default, making a view conform to the Pinchable protocol will attach a `UIPinchGesetureRecognizer` and allow the user to pinch and scale a view.  Creating a pinchable view is as simple as:
 
-```
+```swift
 class MyPinchableView : UIView, Pinchable {
     init(frame: CGRect) {
         super.init(frame: frame)
@@ -53,7 +53,7 @@ class MyPinchableView : UIView, Pinchable {
 To do an action on start or finish, or create custom transform or animation logic, simply implement the appropriate methods in the `Pinchable` protocol
 
 
-```
+```swift
 func didStartPinching()
 func didFinishPinching()
 func transformWithScale(scale:CGFloat, lastScale:CGFloat) -> CGAffineTransform
@@ -62,7 +62,7 @@ func animateToPinchedTransform(transform:CGAffineTransform)
 #### Rotatable
 By default, making a view conform to the `Rotatable` protocol will attach a `UIRotationGestureRecognizer` and allow the user to use two fingers to rotate a view.  Creating a rotatable view is as simple as:
 
-```
+```swift
 class MyRotatableView : UIView, Rotatable {
     init(frame: CGRect) {
         super.init(frame: frame)
@@ -73,7 +73,7 @@ class MyRotatableView : UIView, Rotatable {
 
 To do an action on start or finish, or create custom transform or animation logic, simply implement the appropriate methods in the `Rotatable` protocol
 
-```
+```swift
 func didStartRotating()
 func didFinishRotating()
 func transformWithRotation(rotation:CGFloat, lastRotation:CGFloat) -> CGAffineTransform
@@ -84,7 +84,7 @@ func animateToRotatedTransform(transform:CGAffineTransform)
 
 By default, making a view conform to the `Tappable` protocol will attach a `UILongPressGestureRecognizer` and allow the user to tap.  It will call the `didTap()` method and set the `alpha` of the view to `0.5` on the down state and `1.0` on the up state.  Creating a tappable view is as simple as:
 
-```
+```swift
 class MyTappableView : UIView, Tappable {
     init(frame: CGRect) {
         super.init(frame: frame)
@@ -100,7 +100,7 @@ class MyTappableView : UIView, Tappable {
 To do customize the up and down state and/or adjust the minimum press duration and allowable movement, simply implement the appropriate methods in the `Tappable` protocol.
 
 
-```
+```swift
 func didTap()
 func didTouchDown()
 func didTouchUp()
@@ -112,7 +112,7 @@ func allowableMovement() -> CGFloat
 
 Because protocols are addative, you can mix and match these protocols to create even more dynamic views. Creating a view that movable, pinchable, rotatable, and tappable is as easy as:
 
-```
+```swift
 class MyAwesomeView : UIView, Moveable, Rotatable, Pinchable, Tappable {
     init(frame: CGRect) {
         super.init(frame: frame)

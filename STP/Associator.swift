@@ -8,6 +8,8 @@
 
 import ObjectiveC
 
+// Why lifted?
+// Call it ValueWrapper or Wrapper
 private final class Lifted<T> {
     let value: T
     init(_ x: T) {
