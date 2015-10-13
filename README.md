@@ -33,8 +33,10 @@ To do an action on start or finish, or use custom logic for movement (such as bo
 
 ```swift
 func didStartMoving()
-func didFinishMoving()
-func translateToPointFromTranslation(translation:CGPoint, startPoint:CGPoint, currentPoint:CGPoint) -> CGPoint
+func didFinishMoving(velocity:CGPoint)
+func canMoveToX(x:CGFloat) -> Bool
+func canMoveToY(y:CGFloat) -> Bool
+func translateToPointFromTranslation(translation:CGPoint, velocity:CGPoint, startPoint:CGPoint, currentPoint:CGPoint) -> CGPoint
 func animateToPoint(point:CGPoint)
 ```
 
@@ -56,7 +58,9 @@ To do an action on start or finish, or create custom transform or animation logi
 ```swift
 func didStartPinching()
 func didFinishPinching()
-func transformWithScale(scale:CGFloat, lastScale:CGFloat) -> CGAffineTransform
+func maximumPinchScale() -> CGFloat
+func minimumPinchScale() -> CGFloat
+func transformWithScale(scale:CGFloat, lastScale:CGFloat, velocity:CGFloat) -> CGAffineTransform
 func animateToPinchedTransform(transform:CGAffineTransform)
 ```
 #### Rotatable
@@ -75,8 +79,10 @@ To do an action on start or finish, or create custom transform or animation logi
 
 ```swift
 func didStartRotating()
-func didFinishRotating()
-func transformWithRotation(rotation:CGFloat, lastRotation:CGFloat) -> CGAffineTransform
+func didFinishRotating(velocity:CGFloat)
+func minimumRotation() -> CGFloat
+func maximumRotation() -> CGFloat
+func transformWithRotation(rotation:CGFloat, lastRotation:CGFloat, velocity:CGFloat) -> CGAffineTransform
 func animateToRotatedTransform(transform:CGAffineTransform)
 ```
 
