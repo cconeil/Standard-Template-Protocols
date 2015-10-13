@@ -63,6 +63,7 @@ public extension Rotatable where Self:UIView {
         return
     }
 
+    // Can you give a velocity here? 
     func didFinishRotating() {
         return
     }

@@ -22,6 +22,7 @@ extension UIGestureRecognizer {
         }
     }
 
+    // Call this action block or something
     convenience init(block:(recognizer:UIGestureRecognizer) -> Void) {
         self.init()
         self.block = block

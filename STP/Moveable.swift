@@ -65,10 +65,14 @@ public extension Moveable where Self:UIView {
         return
     }
 
+    // again velocity
     func didFinishMoving() {
         return
     }
 
+    // make these internal or make them part of the protocol
+    // I think it would be cool for people to override these
+    // can only move to one half of a super view etc...
     func canMoveToX(x:CGFloat) -> Bool {
         return true
     }
