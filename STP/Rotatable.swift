@@ -1,6 +1,6 @@
 //
 //  Rotatable.swift
-//  Standard Template Categories
+//  Standard Template Protocols
 //
 //  Created by Chris O'Neil on 10/6/15.
 //  Copyright © 2015 Because. All rights reserved.
@@ -11,9 +11,10 @@ import UIKit
 public protocol Rotatable {
     func makeRotatable()
     func didStartRotating()
-    func didFinishRotating()
-
-    func transformWithRotation(rotation:CGFloat, lastRotation:CGFloat) -> CGAffineTransform
+    func didFinishRotating(velocity:CGFloat)
+    func minimumRotation() -> CGFloat
+    func maximumRotation() -> CGFloat
+    func transformWithRotation(rotation:CGFloat, lastRotation:CGFloat, velocity:CGFloat) -> CGAffineTransform
     func animateToRotatedTransform(transform:CGAffineTransform)
 }
 
@@ -23,14 +24,15 @@ public extension Rotatable where Self:UIView {
         var lastRotation:CGFloat = 0.0
         let gestureRecognizer = UIRotationGestureRecognizer { [unowned self] (recognizer) -> Void in
             let rotation = recognizer as! UIRotationGestureRecognizer
+            let velocity = rotation.velocity
             switch rotation.state {
             case .Began:
                 self.didStartRotating()
                 lastRotation = 0.0
             case .Ended:
-                self.didFinishRotating()
+                self.didFinishRotating(velocity)
             case .Changed:
-                let transform = self.transformWithRotation(rotation.rotation, lastRotation: lastRotation)
+                let transform = self.transformWithRotation(rotation.rotation, lastRotation: lastRotation, velocity:velocity)
                 self.animateToRotatedTransform(transform)
                 lastRotation = rotation.rotation
             default:
@@ -40,7 +42,7 @@ public extension Rotatable where Self:UIView {
         self.addGestureRecognizer(gestureRecognizer)
     }
 
-    func transformWithRotation(rotation:CGFloat, lastRotation:CGFloat) -> CGAffineTransform {
+    func transformWithRotation(rotation:CGFloat, lastRotation:CGFloat, velocity:CGFloat) -> CGAffineTransform {
         let angle = rotation - lastRotation
         return CGAffineTransformRotate(self.transform, angle)
     }
@@ -63,8 +65,7 @@ public extension Rotatable where Self:UIView {
         return
     }
 
-    // Can you give a velocity here? 
-    func didFinishRotating() {
+    func didFinishRotating(velocity:CGFloat) {
         return
     }
 }

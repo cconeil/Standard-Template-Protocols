@@ -8,9 +8,7 @@
 
 import ObjectiveC
 
-// Why lifted?
-// Call it ValueWrapper or Wrapper
-private final class Lifted<T> {
+private final class Wrapper<T> {
     let value: T
     init(_ x: T) {
         value = x
@@ -19,8 +17,8 @@ private final class Lifted<T> {
 
 class Associator {
 
-    static private func lift<T>(x: T) -> Lifted<T>  {
-        return Lifted(x)
+    static private func wrap<T>(x: T) -> Wrapper<T>  {
+        return Wrapper(x)
     }
 
     static func setAssociatedObject<T>(object: AnyObject, value: T, associativeKey: UnsafePointer<Void>, policy: objc_AssociationPolicy) {
@@ -28,7 +26,7 @@ class Associator {
             objc_setAssociatedObject(object, associativeKey, v,  policy)
         }
         else {
-            objc_setAssociatedObject(object, associativeKey, lift(value),  policy)
+            objc_setAssociatedObject(object, associativeKey, wrap(value),  policy)
         }
     }
 
@@ -36,7 +34,7 @@ class Associator {
         if let v = objc_getAssociatedObject(object, associativeKey) as? T {
             return v
         }
-        else if let v = objc_getAssociatedObject(object, associativeKey) as? Lifted<T> {
+        else if let v = objc_getAssociatedObject(object, associativeKey) as? Wrapper<T> {
             return v.value
         }
         else {

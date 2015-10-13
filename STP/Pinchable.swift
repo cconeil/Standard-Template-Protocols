@@ -1,6 +1,6 @@
 //
 //  Pinchable.swift
-//  Standard Template Categories
+//  Standard Template Protocols
 //
 //  Created by Chris O'Neil on 10/6/15.
 //  Copyright © 2015 Because. All rights reserved.
@@ -12,7 +12,9 @@ public protocol Pinchable {
     func makePinchable()
     func didStartPinching()
     func didFinishPinching()
-    func transformWithScale(scale:CGFloat, lastScale:CGFloat) -> CGAffineTransform
+    func maximumPinchScale() -> CGFloat
+    func minimumPinchScale() -> CGFloat
+    func transformWithScale(scale:CGFloat, lastScale:CGFloat, velocity:CGFloat) -> CGAffineTransform
     func animateToPinchedTransform(transform:CGAffineTransform)
 }
 
@@ -21,7 +23,6 @@ public extension Pinchable where Self:UIView {
     func makePinchable() {
 
         var lastScale:CGFloat = 1.0
-        // Yayyyy unowned. Fucking awesome
         let gestureRecognizer = UIPinchGestureRecognizer { [unowned self] (recognizer) -> Void in
             let pinch = recognizer as! UIPinchGestureRecognizer
             switch pinch.state {
@@ -32,7 +33,8 @@ public extension Pinchable where Self:UIView {
                 lastScale = 1.0
             case .Changed:
                 let scale = pinch.scale
-                let transform = self.transformWithScale(scale, lastScale: lastScale)
+                let velocity = pinch.velocity
+                let transform = self.transformWithScale(scale, lastScale: lastScale, velocity:velocity)
                 lastScale = scale
                 self.animateToPinchedTransform(transform)
             default:
@@ -50,8 +52,6 @@ public extension Pinchable where Self:UIView {
         return
     }
 
-    // make these aprt of the protocol
-    // or a config protocol that pichable conforms to
     func maximumPinchScale() -> CGFloat {
         return 2.0
     }
@@ -60,7 +60,7 @@ public extension Pinchable where Self:UIView {
         return 0.1
     }
 
-    func transformWithScale(scale:CGFloat, lastScale:CGFloat) -> CGAffineTransform {
+    func transformWithScale(scale:CGFloat, lastScale:CGFloat, velocity:CGFloat) -> CGAffineTransform {
         let updatedScale = 1.0 - (lastScale - scale)
         return CGAffineTransformScale(self.transform, updatedScale, updatedScale)
     }

@@ -1,6 +1,6 @@
 //
 //  Moveable.swift
-//  Standard Template Categories
+//  Standard Template Protocols
 //
 //  Created by Chris O'Neil on 9/20/15.
 //  Copyright (c) 2015 Because. All rights reserved.
@@ -11,8 +11,10 @@ import UIKit
 public protocol Moveable {
     func makeMoveable()
     func didStartMoving()
-    func didFinishMoving()
-    func translateToPointFromTranslation(translation:CGPoint, startPoint:CGPoint, currentPoint:CGPoint) -> CGPoint
+    func didFinishMoving(velocity:CGPoint)
+    func canMoveToX(x:CGFloat) -> Bool
+    func canMoveToY(y:CGFloat) -> Bool
+    func translateToPointFromTranslation(translation:CGPoint, velocity:CGPoint, startPoint:CGPoint, currentPoint:CGPoint) -> CGPoint
     func animateToPoint(point:CGPoint)
 }
 
@@ -25,15 +27,16 @@ public extension Moveable where Self:UIView {
 
         let gestureRecognizer = UIPanGestureRecognizer { [unowned self] (recognizer) -> Void in
             let pan = recognizer as! UIPanGestureRecognizer
+            let velocity = pan.velocityInView(self.superview)
             let translation = pan.translationInView(self.superview)
             switch recognizer.state {
             case .Began:
                 startPoint = pan.view?.center ?? CGPointZero
                 self.didStartMoving()
             case .Ended, .Cancelled, .Failed:
-                self.didFinishMoving()
+                self.didFinishMoving(velocity)
             default:
-                let point = self.translateToPointFromTranslation(translation, startPoint: startPoint, currentPoint: currentPoint)
+                let point = self.translateToPointFromTranslation(translation, velocity:velocity, startPoint: startPoint, currentPoint: currentPoint)
                 currentPoint = point
                 self.animateToPoint(point)
             }
@@ -47,7 +50,7 @@ public extension Moveable where Self:UIView {
         }
     }
 
-    func translateToPointFromTranslation(translation:CGPoint, startPoint:CGPoint, currentPoint:CGPoint) -> CGPoint {
+    func translateToPointFromTranslation(translation:CGPoint, velocity:CGPoint, startPoint:CGPoint, currentPoint:CGPoint) -> CGPoint {
         var point = startPoint
 
         if (self.canMoveToX(translation.x)) {
@@ -65,14 +68,10 @@ public extension Moveable where Self:UIView {
         return
     }
 
-    // again velocity
-    func didFinishMoving() {
+    func didFinishMoving(velocity:CGPoint) {
         return
     }
 
-    // make these internal or make them part of the protocol
-    // I think it would be cool for people to override these
-    // can only move to one half of a super view etc...
     func canMoveToX(x:CGFloat) -> Bool {
         return true
     }
