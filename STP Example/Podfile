@@ -1,0 +1,6 @@
+platform :ios, '9.0'
+link_with 'STP Example'
+xcodeproj 'STP Example.xcodeproj'
+use_frameworks!
+
+pod 'STP', '~> 0.1.0'
