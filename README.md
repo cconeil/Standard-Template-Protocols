@@ -15,6 +15,17 @@ Swift 2.0 opens a world of opportunity with enhanced Protocols and Protocol Exte
 
 Too often we find ourselves locked into deep and complicated subclassing trees just to factor out common behavior in our apps. This makes our code  inflexible, hard to navigate, and contain too many dependencies. Using protocols for common features allows us to create default behavior that is additive without complicated subclassing.
 
+## Setup
+#### Cocoapods (recommended)
+1. Make sure you have downloaded and installed [cocoapods](https://cocoapods.org/).
+2. Add `pod 'STP', '~> 0.1.1'`to your podfile.
+3. Make sure that your podfile includes `use_frameworks!`
+4. `pod install`
+5. `import STC` and let the magic happen!
+
+#### Manual
+1. Drag and drop the files into your project and build the app.  Note you will not get bugfixes, updates, and new releases if you do this. If you want custom features, I reccommend forking this repo.
+
 ## UIGestureRecognizer Protocols
 All too often, we find ourselves subclassing views to allow them to be tappable, moveable, rotatable, and more. These protocols allow you to add these features by simply conforming to a protocol, but still give you the flexible to create custom features and animations.
 
