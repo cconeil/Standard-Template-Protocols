@@ -6,11 +6,18 @@
 //  Copyright © 2015 Because. All rights reserved.
 //
 
+
+private class MultiDelegate : NSObject, UIGestureRecognizerDelegate {
+    @objc func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+}
+
 extension UIGestureRecognizer {
 
     struct PropertyKeys {
         static var blockKey = "BCBlockPropertyKey"
-        static var multipleGestureRecognizerKey = "BCMultipleGestureRecognizerKey"
+        static var multiDelegateKey = "BCMultiDelegateKey"
     }
 
     private var block:((recognizer:UIGestureRecognizer) -> Void) {
@@ -22,9 +29,20 @@ extension UIGestureRecognizer {
         }
     }
 
+    private var multiDelegate:MultiDelegate {
+        get {
+            return Associator.getAssociatedObject(self, associativeKey:&PropertyKeys.multiDelegateKey)!
+        }
+        set {
+            Associator.setAssociatedObject(self, value: newValue, associativeKey:&PropertyKeys.multiDelegateKey, policy: .OBJC_ASSOCIATION_RETAIN)
+        }
+    }
+
     convenience init(block:(recognizer:UIGestureRecognizer) -> Void) {
         self.init()
         self.block = block
+        self.multiDelegate = MultiDelegate()
+        self.delegate = self.multiDelegate
         self.addTarget(self, action: "didInteractWithGestureRecognizer:")
     }
 

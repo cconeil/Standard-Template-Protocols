@@ -59,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				9DE7FAB11BCCD7A8002E7652 /* STP.h */,
+				9DE7FABA1BCCD7C7002E7652 /* Associator.swift */,
 				9DE7FAB91BCCD7B8002E7652 /* UIGestureRecognizers */,
 				9DE7FAB31BCCD7A8002E7652 /* Info.plist */,
 			);
@@ -68,7 +69,6 @@
 		9DE7FAB91BCCD7B8002E7652 /* UIGestureRecognizers */ = {
 			isa = PBXGroup;
 			children = (
-				9DE7FABA1BCCD7C7002E7652 /* Associator.swift */,
 				9DE7FABB1BCCD7C7002E7652 /* BlockGestureRecognizer.swift */,
 				9DE7FABE1BCCD7CE002E7652 /* Moveable.swift */,
 				9DE7FABF1BCCD7CE002E7652 /* Pinchable.swift */,
@@ -312,6 +312,7 @@
 				9DE7FAB81BCCD7A8002E7652 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
