@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9D1FC26E1BC78B8A00238B57"
+               BlueprintIdentifier = "9DE7FAAD1BCCD7A8002E7652"
                BuildableName = "STP.framework"
                BlueprintName = "STP"
                ReferencedContainer = "container:STP.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9D1FC26E1BC78B8A00238B57"
+            BlueprintIdentifier = "9DE7FAAD1BCCD7A8002E7652"
             BuildableName = "STP.framework"
             BlueprintName = "STP"
             ReferencedContainer = "container:STP.xcodeproj">
@@ -63,7 +63,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9D1FC26E1BC78B8A00238B57"
+            BlueprintIdentifier = "9DE7FAAD1BCCD7A8002E7652"
             BuildableName = "STP.framework"
             BlueprintName = "STP"
             ReferencedContainer = "container:STP.xcodeproj">

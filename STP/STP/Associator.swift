@@ -1,6 +1,6 @@
 //
 //  Associator.swift
-//  STC
+//  STP
 //
 //  Created by Chris O'Neil on 10/11/15.
 //  Copyright © 2015 Because. All rights reserved.
