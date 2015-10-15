@@ -53,12 +53,16 @@ public extension Moveable where Self:UIView {
     func translateToPointFromTranslation(translation:CGPoint, velocity:CGPoint, startPoint:CGPoint, currentPoint:CGPoint) -> CGPoint {
         var point = startPoint
 
-        if (self.canMoveToX(translation.x)) {
+        if (self.canMoveToX(point.x + translation.x)) {
             point.x += translation.x
+        } else {
+            point.x = translation.x > 0.0 ? maximumPoint().x : minimumPoint().x
         }
 
-        if (self.canMoveToY(translation.x)) {
+        if (self.canMoveToY(point.y + translation.y)) {
             point.y += translation.y
+        } else {
+            point.y = translation.y > 0.0 ? maximumPoint().y : minimumPoint().y
         }
 
         return point
@@ -73,10 +77,44 @@ public extension Moveable where Self:UIView {
     }
 
     func canMoveToX(x:CGFloat) -> Bool {
+        if let superviewFrame = self.superview?.frame {
+            let diameter = self.frame.size.width / 2.0
+            if x + diameter > superviewFrame.size.width {
+                return false
+            }
+            if x - diameter < 0.0 {
+                return false
+            }
+        }
         return true
     }
 
     func canMoveToY(y:CGFloat) -> Bool {
+        if let superviewFrame = self.superview?.frame {
+            let diameter = self.frame.size.height / 2.0
+            if y + diameter > superviewFrame.size.height {
+                return false
+            }
+            if y - diameter < 0.0 {
+                return false
+            }
+        }
         return true
+    }
+
+    func maximumPoint() -> CGPoint {
+        if let superviewFrame = self.superview?.frame {
+            let x = superviewFrame.size.width - self.frame.size.width / 2.0
+            let y = superviewFrame.size.height - self.frame.size.height / 2.0
+            return CGPointMake(x, y)
+        } else {
+            return CGPoint.zero
+        }
+    }
+
+    func minimumPoint() -> CGPoint {
+        let x = self.frame.size.width / 2.0
+        let y = self.frame.size.height / 2.0
+        return CGPointMake(x, y)
     }
 }
