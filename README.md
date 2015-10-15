@@ -30,7 +30,7 @@ Too often we find ourselves locked into deep and complicated subclassing trees j
 All too often, we find ourselves subclassing views to allow them to be tappable, moveable, rotatable, and more. These protocols allow you to add these features by simply conforming to a protocol, but still give you the flexible to create custom features and animations.
 
 #### Moveable
-By default, making a view conform to the Movable protocol will attach a `UIPanGestureRecognizer` and allow the user to tap on the view and drag it around the screen. Creating a moveable view is as simple as:
+By default, making a view conform to the Movable protocol will attach a `UIPanGestureRecognizer` and allow the user to tap on the view and drag it around the screen. The default behavior is for the view to only be dragged within its superview. Creating a moveable view is as simple as:
 
 ```swift    
 class MyMoveableView : UIView, Moveable {
@@ -40,7 +40,7 @@ class MyMoveableView : UIView, Moveable {
     }
 }
 ``` 
-To do an action on start or finish, or use custom logic for movement (such as bounding the movement into the views superview) or animation, implement the appropriate methods in the `Moveable` protocol.
+To do an action on start or finish, or use custom logic for movement or animation, implement the appropriate methods in the `Moveable` protocol.
 
 ```swift
 func didStartMoving()
