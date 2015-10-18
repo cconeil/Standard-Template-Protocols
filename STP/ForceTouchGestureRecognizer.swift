@@ -9,6 +9,7 @@
 import UIKit
 import UIKit.UIGestureRecognizerSubclass
 
+@available(iOS 9.0, *)
 class ForceTouchGestureRecognizer: UIGestureRecognizer {
 
     var force:CGFloat = 0.0
@@ -29,7 +30,6 @@ class ForceTouchGestureRecognizer: UIGestureRecognizer {
         self.force = touch?.force ?? 0.0
         self.state = .Changed
     }
-
 
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent) {
         super.touchesEnded(touches, withEvent: event)
