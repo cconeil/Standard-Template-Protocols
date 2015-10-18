@@ -125,6 +125,27 @@ func minimumPressDuration() -> NSTimeInterval
 func allowableMovement() -> CGFloat
 ```
 
+#### Forceable
+
+By default, making a view conform to the `Forceable` protocol will attach a `ForceTouchGestureRecognizer` and allow the user to press down with a force. It will call the `didForce()` method, but doesn't have any default behavior. Creating a forceable view is as simple as:
+
+```swift
+class ForceView: UIView, Forceable {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.makeForceable()
+    }
+}
+```
+
+To do customize the vide on force, simply implement the appropriate methods in the `Forceable` protocol.
+
+```swift
+func didStartForcing(force:CGFloat)
+func didForce(force:CGFloat, lastForce:CGFloat)
+func didFinishForcing(force:CGFloat)
+```
+
 #### Using Them Together
 
 Because protocols are addative, you can mix and match these protocols to create even more dynamic views. Creating a view that movable, pinchable, rotatable, and tappable is as easy as:
