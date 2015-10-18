@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9037260230BE4B7EB8172CD8"
+               BlueprintIdentifier = "75ACB0FF5B682FE4BFEA977D"
                BuildableName = "STP.framework"
                BlueprintName = "STP"
                ReferencedContainer = "container:Pods.xcodeproj">

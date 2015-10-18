@@ -22,6 +22,7 @@ public extension Forceable where Self:UIView {
             let force = recognizer as! ForceTouchGestureRecognizer
             switch force.state {
             case .Began:
+                lastForce = 1.0
                 self.didStartForcing(force.force)
             case .Ended, .Failed, .Cancelled:
                 self.didFinishForcing(force.force)
@@ -34,17 +35,14 @@ public extension Forceable where Self:UIView {
     }
 
     func didStartForcing(force:CGFloat) {
-        print("didStartForcing")
         return
     }
 
     func didForce(force:CGFloat, lastForce:CGFloat) {
-        print("force = \(force)")
         return
     }
 
     func didFinishForcing(force:CGFloat) {
-        print("didFinishForcing")
         return
     }
 }

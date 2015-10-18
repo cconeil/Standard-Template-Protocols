@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		60ECDE6005C95DCF12438F33 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F89EC9ED6EA77D6A930DD74 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		9D3011421BCCE1B000AAD5EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3011411BCCE1B000AAD5EC /* AppDelegate.swift */; };
 		9D3011441BCCE1B000AAD5EC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3011431BCCE1B000AAD5EC /* FirstViewController.swift */; };
 		9D3011461BCCE1B000AAD5EC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3011451BCCE1B000AAD5EC /* SecondViewController.swift */; };
@@ -15,10 +14,10 @@
 		9D30114B1BCCE1B000AAD5EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D30114A1BCCE1B000AAD5EC /* Assets.xcassets */; };
 		9D30114E1BCCE1B000AAD5EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D30114C1BCCE1B000AAD5EC /* LaunchScreen.storyboard */; };
 		9D3011581BCCE28300AAD5EC /* MyAwesomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3011571BCCE28300AAD5EC /* MyAwesomeView.swift */; settings = {ASSET_TAGS = (); }; };
+		9D3011801BD4282800AAD5EC /* STP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D30117F1BD4282800AAD5EC /* STP.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8F89EC9ED6EA77D6A930DD74 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D30113E1BCCE1B000AAD5EC /* STP Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "STP Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D3011411BCCE1B000AAD5EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D3011431BCCE1B000AAD5EC /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +27,7 @@
 		9D30114D1BCCE1B000AAD5EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D30114F1BCCE1B000AAD5EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D3011571BCCE28300AAD5EC /* MyAwesomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAwesomeView.swift; sourceTree = "<group>"; };
+		9D30117F1BD4282800AAD5EC /* STP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = STP.framework; path = "../build/Debug-iphoneos/STP.framework"; sourceTree = "<group>"; };
 		D383D24BF185EA3F43B6D72A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E209F0006105DC99C23987C3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -37,7 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60ECDE6005C95DCF12438F33 /* Pods.framework in Frameworks */,
+				9D3011801BD4282800AAD5EC /* STP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +89,7 @@
 		CAB6C5375998D32D7B91A7D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8F89EC9ED6EA77D6A930DD74 /* Pods.framework */,
+				9D30117F1BD4282800AAD5EC /* STP.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
