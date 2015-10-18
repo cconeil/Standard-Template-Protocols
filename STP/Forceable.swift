@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 9, *)
 public protocol Forceable {
     func makeForceable()
     func didStartForcing(force:CGFloat)
@@ -15,6 +16,7 @@ public protocol Forceable {
     func didFinishForcing(force:CGFloat)
 }
 
+@available(iOS 9, *)
 public extension Forceable where Self:UIView {
     func makeForceable() {
         var lastForce:CGFloat = 1.0
