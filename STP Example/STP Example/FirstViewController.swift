@@ -15,14 +15,17 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let awesomeView = MyAwesomeView()
-        awesomeView.backgroundColor = UIColor.blueColor()
-        awesomeView.frame = CGRectMake(100.0, 100.0, 200.0, 200.0)
-        awesomeView.makePinchable()
-        awesomeView.makeMoveable()
-        awesomeView.makeRotatable()
-        awesomeView.makeTappable()
-        self.view.addSubview(awesomeView)
+        let forceView = ForceView(frame: CGRectMake(0.0, 0.0, 300.0, 300.0))
+        self.view.addSubview(forceView)
+
+//        let awesomeView = MyAwesomeView()
+//        awesomeView.backgroundColor = UIColor.blueColor()
+//        awesomeView.frame = CGRectMake(100.0, 100.0, 200.0, 200.0)
+//        awesomeView.makePinchable()
+//        awesomeView.makeMoveable()
+//        awesomeView.makeRotatable()
+//        awesomeView.makeTappable()
+//        self.view.addSubview(awesomeView)
     }
 
     override func didReceiveMemoryWarning() {
