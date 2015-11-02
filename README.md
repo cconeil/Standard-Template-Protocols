@@ -10,6 +10,8 @@ Essential protocols for your every day iOS needs
 
 <img src="./gifs/gesture_example.gif" width="320px"></img>
 
+UIGestureRecognizerProtocols
+
 ## About
 
 Swift 2.0 opens a world of opportunity with enhanced Protocols and Protocol Extensions. This library attempts to address some of the most commonly repeated patterns in iOS apps using protocol oriented programming and reduce the need to create deep, complicated subclassing trees.
