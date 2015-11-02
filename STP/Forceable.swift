@@ -15,6 +15,7 @@ public protocol Forceable {
     func didFinishForcing(force:CGFloat)
 }
 
+@available(iOS 9.0, *)
 public extension Forceable where Self:UIView {
     func makeForceable() {
         var lastForce:CGFloat = 1.0
