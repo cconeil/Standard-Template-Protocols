@@ -47,8 +47,8 @@ func didStartMoving()
 func didFinishMoving(velocity:CGPoint)
 func canMoveToX(x:CGFloat) -> Bool
 func canMoveToY(y:CGFloat) -> Bool
-func translateToPointFromTranslation(translation:CGPoint, velocity:CGPoint, startPoint:CGPoint, currentPoint:CGPoint) -> CGPoint
-func animateToPoint(point:CGPoint)
+func translateCenter(translation:CGPoint, velocity:CGPoint, startPoint:CGPoint, currentPoint:CGPoint) -> CGPoint
+func animateToMovedTransform(transform:CGAffineTransform)
 ```
 
 #### Pinchable
@@ -166,7 +166,6 @@ class MyAwesomeView : UIView, Moveable, Rotatable, Pinchable, Tappable {
 You can feel free to email me or contact me on Twitter if you have any questions, ideas, or just want to contribute.
 
 t: [@chrisoneil_](https://twitter.com/chrisoneil_)
-
 e: [cconeil5@gmail.com](mailto:cconeil5@gmail.com)
 
 A special thanks to [jhurray](https://github.com/jhurray) for inspring me to do work on some open source code.
