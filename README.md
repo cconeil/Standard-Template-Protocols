@@ -23,7 +23,7 @@ Too often we find ourselves locked into deep and complicated subclassing trees j
 ## Setup
 #### Cocoapods (recommended)
 1. Make sure you have downloaded and installed [cocoapods](https://cocoapods.org/).
-2. Add `pod 'STP', '~> 0.3.0'`to your podfile.
+2. Add `pod 'STP'`to your podfile.
 3. Make sure that your podfile includes `use_frameworks!`
 4. `pod install`
 5. `import STC` and let the magic happen!
@@ -168,7 +168,7 @@ class MyAwesomeView : UIView, Moveable, Rotatable, Pinchable, Tappable {
 ```
 
 ## Contributions
-You can feel free to email me or contact me on Twitter if you have any questions, ideas, or just want to contribute.
+Pull requests are welcome! You can also email me or contact me on Twitter if you have any questions, ideas, or just want to contribute.
 
 t: [@chrisoneil_](https://twitter.com/chrisoneil_)
 
