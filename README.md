@@ -6,6 +6,11 @@ Essential protocols for your every day iOS needs
 ![MIT License](https://img.shields.io/badge/License-MIT-lightgrey.svg)
 ![Platform](https://img.shields.io/badge/platform-%20iOS%20-lightgrey.svg)
 
+## Example
+
+<img src="./gifs/gesture_example.gif" width="320px"></img>
+
+UIGestureRecognizerProtocols
 
 ## About
 
