@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'STP'
-  s.version  = '0.2.0'
+  s.version  = '0.3.0'
   s.author   = { 'Chris O\'Neil' => 'cconeil5@gmail.com' }
   s.homepage = 'https://github.com/cconeil/Standard-Template-Protocols'
   s.summary  = 'Protocols for your every day iOS needs'
