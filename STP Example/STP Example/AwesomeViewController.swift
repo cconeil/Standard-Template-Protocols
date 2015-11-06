@@ -32,7 +32,7 @@ class AwesomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
-        self.title = "Your custom View"
+        self.title = "Your Custom View"
 
         let awesomeView = MyAwesomeView(frame: CGRectMake(0.0, 0.0, 150.0, 150.0))
         awesomeView.center = self.view.center

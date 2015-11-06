@@ -14,8 +14,8 @@ public protocol Moveable {
     func didFinishMoving(velocity:CGPoint)
     func canMoveToX(x:CGFloat) -> Bool
     func canMoveToY(y:CGFloat) -> Bool
-    func translateToPointFromTranslation(translation:CGPoint, velocity:CGPoint, startPoint:CGPoint, currentPoint:CGPoint) -> CGPoint
-    func animateToPoint(point:CGPoint)
+    func translateCenter(translation:CGPoint, velocity:CGPoint, startPoint:CGPoint, currentPoint:CGPoint) -> CGPoint
+    func animateToMovedTransform(transform:CGAffineTransform)
 }
 
 public extension Moveable where Self:UIView {
@@ -31,26 +31,27 @@ public extension Moveable where Self:UIView {
             let translation = pan.translationInView(self.superview)
             switch recognizer.state {
             case .Began:
-                startPoint = pan.view?.center ?? CGPointZero
+                startPoint = self.center
+                currentPoint = self.center
                 self.didStartMoving()
             case .Ended, .Cancelled, .Failed:
                 self.didFinishMoving(velocity)
             default:
-                let point = self.translateToPointFromTranslation(translation, velocity:velocity, startPoint: startPoint, currentPoint: currentPoint)
+                let point = self.translateCenter(translation, velocity:velocity, startPoint: startPoint, currentPoint: currentPoint)
+                self.animateToMovedTransform(self.transformFromCenter(point, currentPoint: currentPoint))
                 currentPoint = point
-                self.animateToPoint(point)
             }
         }
         self.addGestureRecognizer(gestureRecognizer)
     }
 
-    func animateToPoint(point:CGPoint) {
+    func animateToMovedTransform(transform:CGAffineTransform) {
         UIView.animateWithDuration(0.01) { () -> Void in
-            self.center = point
+            self.transform = transform;
         }
     }
 
-    func translateToPointFromTranslation(translation:CGPoint, velocity:CGPoint, startPoint:CGPoint, currentPoint:CGPoint) -> CGPoint {
+    func translateCenter(translation:CGPoint, velocity:CGPoint, startPoint:CGPoint, currentPoint:CGPoint) -> CGPoint {
         var point = startPoint
 
         if (self.canMoveToX(point.x + translation.x)) {
@@ -66,6 +67,10 @@ public extension Moveable where Self:UIView {
         }
 
         return point
+    }
+
+    func transformFromCenter(center:CGPoint, currentPoint:CGPoint) -> CGAffineTransform {
+        return CGAffineTransformTranslate(self.transform, center.x - currentPoint.x , center.y - currentPoint.y)
     }
 
     func didStartMoving() {
