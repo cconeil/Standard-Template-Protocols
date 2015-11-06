@@ -12,9 +12,11 @@
 		9D30114E1BCCE1B000AAD5EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D30114C1BCCE1B000AAD5EC /* LaunchScreen.storyboard */; };
 		9D993B3B1BD9F2F800E20276 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D993B3A1BD9F2F800E20276 /* HomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9D993B3D1BD9FB4100E20276 /* AwesomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D993B3C1BD9FB4100E20276 /* AwesomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F0F9197884129567A1E19C68 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28E6C2BF761D4573238204BD /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		28E6C2BF761D4573238204BD /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D30113E1BCCE1B000AAD5EC /* STP Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "STP Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D3011411BCCE1B000AAD5EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D30114A1BCCE1B000AAD5EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -32,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0F9197884129567A1E19C68 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				9D30117F1BD4282800AAD5EC /* STP.framework */,
+				28E6C2BF761D4573238204BD /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

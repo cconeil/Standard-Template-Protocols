@@ -3,4 +3,4 @@ link_with 'STP Example'
 xcodeproj 'STP Example.xcodeproj'
 use_frameworks!
 
-pod 'STP', '~> 0.1.0'
+pod 'STP', '~> 0.3.0'

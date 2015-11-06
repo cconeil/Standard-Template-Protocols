@@ -1,6 +1,0 @@
-framework module STP {
-  umbrella header "STP-umbrella.h"
-
-  export *
-  module * { export * }
-}
