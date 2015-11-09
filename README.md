@@ -168,7 +168,7 @@ class MyAwesomeView : UIView, Moveable, Rotatable, Pinchable, Tappable {
 ```
 
 ## Contributions
-You can feel free to email me or contact me on Twitter if you have any questions, ideas, or just want to contribute.
+Pull requests are welcome! :) You can also email me or contact me on Twitter if you have any questions, ideas, or just want to contribute.
 
 t: [@chrisoneil_](https://twitter.com/chrisoneil_)
 
@@ -178,11 +178,10 @@ A special thanks to [jhurray](https://github.com/jhurray) for inspring me to do 
 
 
 ## TODO:
-There's a ton that we can do hear, and I would love to hear suggestions and get pull requets. Here are some things that I'm planning to work on in the immediate future.
+There's a ton that we can do here, and I would love to hear suggestions and get pull requets. Here are some things that I'm planning to work on in the immediate future.
 
-1. A protocol for a 3D touch force gesture.
-2. A protocol for view controllers that implements default peek and pop for force touch.
-3. A protocol for view controllers that drops down an error banner.
+1. A protocol for view controllers that implements default peek and pop for force touch.
+2. A protocol for view controllers that drops down an error banner.
 
 ## License
 Standard Template Protocols is released under the MIT license. See LICENSE for details.
