@@ -21,7 +21,7 @@ Swift 2.0 opens a world of opportunity with enhanced Protocols and Protocol Exte
 Too often we find ourselves locked into deep and complicated subclassing trees just to factor out common behavior in our apps. This makes our code  inflexible, hard to navigate, and contain too many dependencies. Using protocols for common features allows us to create default behavior that is additive without complicated subclassing.
 
 ## Setup
-#### Cocoapods (recommended)
+#### CocoaPods (recommended)
 1. Make sure you have downloaded and installed [cocoapods](https://cocoapods.org/).
 2. Add `pod 'STP', '~> 0.3.0'`to your podfile.
 3. Make sure that your podfile includes `use_frameworks!`
