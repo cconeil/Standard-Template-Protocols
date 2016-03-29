@@ -24,16 +24,36 @@ public extension Tappable where Self:UIView {
         let gestureRecognizer = UILongPressGestureRecognizer { [unowned self] (recognizer) -> Void in
             let tap = recognizer as! UILongPressGestureRecognizer
 
+            func isInFrame() -> Bool {
+                let location = recognizer.locationInView(self)
+                switch location {
+                case _ where location.x < 0 - self.frame.size.width / 2,
+                    _ where location.x > self.frame.size.width * 1.5,
+                    _ where location.y < 0 - self.frame.size.height / 2,
+                    _ where location.y > self.frame.size.height * 1.5:
+                    return false
+                default:
+                    return true
+                }
+            }
+
             switch tap.state {
             case .Began:
                 self.didTouchDown()
             case .Ended:
                 self.didTouchUp()
-                self.didTap()
+                if isInFrame() {
+                    self.didTap()
+                }
             case .Failed, .Cancelled:
                 self.didTouchUp()
-            default:
-                break
+            case .Changed:
+                if isInFrame() {
+                    self.didTouchDown()
+                } else {
+                    self.didTouchUp()
+                }
+            case .Possible: break
             }
         }
 
