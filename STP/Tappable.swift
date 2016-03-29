@@ -25,16 +25,10 @@ public extension Tappable where Self:UIView {
             let tap = recognizer as! UILongPressGestureRecognizer
 
             func isInFrame() -> Bool {
-                let location = recognizer.locationInView(self)
-                switch location {
-                case _ where location.x < 0 - self.frame.size.width / 2,
-                    _ where location.x > self.frame.size.width * 1.5,
-                    _ where location.y < 0 - self.frame.size.height / 2,
-                    _ where location.y > self.frame.size.height * 1.5:
-                    return false
-                default:
-                    return true
-                }
+                return CGRectContainsPoint(
+                  CGRectInset(self.frame, self.frame.width * -0.5, self.frame.height * -0.5),
+                  recognizer.locationInView(self)
+                )
             }
 
             switch tap.state {
